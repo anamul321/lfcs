@@ -17,8 +17,10 @@ sudo useradd -u 5001 john
 sudo useradd -r
 
 
+
 # Deleting any user with their home directory
 sudo userdel -r john
+
 
 
 # Change user's login name
@@ -39,7 +41,24 @@ sudo usermod -e 2030-12-30 john
 # Remove user's expiry date on account
 sudo usermod -e "" john
 
+
 # when a new user is created, all files in /etc/skel gets copied to home directory of the user
+
 
 # Set a password for user
 sudo passwd john
+
+# Expire user's password instantly
+sudo chage -d 0 john
+
+# Cancel user's password change
+sudo chage -d -1 john
+
+# User will need to change password every 30 days
+sudo chage -M 30 john
+
+# Password never expires
+sudo chage -M -1 john
+
+# Show details of user's password
+sudo chage -l john

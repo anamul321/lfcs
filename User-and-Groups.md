@@ -1,3 +1,8 @@
+
+###
+# USERS
+###
+
 # Check user and system users in the system
 cat /etc/passwd
 
@@ -62,3 +67,33 @@ sudo chage -M -1 john
 
 # Show details of user's password
 sudo chage -l john
+
+
+
+###
+# GROUPS
+###
+
+# Check all groups in the system
+cat /etc/group
+
+# Create new group
+sudo groupadd test
+
+# add user to group
+sudo gpasswd -a john test
+
+# remove user from group
+sudo gpasswd -d john test
+
+# change user's primary group
+sudo usermod -g john test
+
+# Change group's name
+sudo groupmod -n ok test
+
+# Delete Group
+sudo groupdel test
+
+# use gpasswd to add users to group because user just gets added to the group without removing other groups associated with the user.
+# usermod will change user, thats why, if this is being used to add user to a group, it will remove existing groups.

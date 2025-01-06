@@ -47,8 +47,6 @@ sudo usermod -e 2030-12-30 john
 sudo usermod -e "" john
 
 
-# when a new user is created, all files in /etc/skel gets copied to home directory of the user
-
 
 # Set a password for user
 sudo passwd john
@@ -97,3 +95,15 @@ sudo groupdel test
 
 # use gpasswd to add users to group because user just gets added to the group without removing other groups associated with the user.
 # usermod will change user, thats why, if this is being used to add user to a group, it will remove existing groups.
+
+
+# in the shell, to change variable. HIST = 1000
+# Once you close the shell, its gone.
+
+# To save just for the user, put it in .bashrc file
+
+# to make sure every user has a new environment variables, add this to /etc/environment
+
+# run a command everytime user logs in /etc/profile.d/lastlogin.sh
+
+# when a new user is created, all files in /etc/skel gets copied to home directory of the user 
